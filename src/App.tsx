@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import Chapters from "./pages/Chapters";
+import Chapter from "./pages/Chapter";
+import Example from "./pages/Example";
+import Part from "./pages/Part";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/Chapters" element={<Chapters />} />
+        <Route path="/Chapters/:chapterId" element={<Chapter />} />
+        <Route path="/Chapters/:chapterId/Parts/:partId" element={<Part />} />
+        <Route path="/Chapters/:chapterId/Parts/:partId/Examples/:exampleId" element={<Example />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
+    </HashRouter>
   );
 }
 
