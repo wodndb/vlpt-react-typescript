@@ -5,8 +5,8 @@ export const Chapter: React.VFC = () => {
     const params = useParams();
     return (
         <>
+            <h2>Chapter: {params.chapterId}</h2> 
             { (params.chapterId === '1') && <Chapter01 /> }
-            { (params.chapterId !== '1') && <h2>Chapter: {params.chapterId}</h2> }
         </>
     )
 }
