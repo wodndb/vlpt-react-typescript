@@ -1,11 +1,8 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
-import C01Part03 from "./P03/C01Part03";
-import C01Part04 from "./P04/C01Part04";
-import C01Part05 from "./P05/C01Part05";
 
 export const Chapter01: React.VFC = () => {
-  const Parts = [null, null, <C01Part03 />, <C01Part04 />, <C01Part05 />];
+  const Parts = [null, null, true, true, true, true];
 
   return (
     <>
