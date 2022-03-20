@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type WrapperProps = {
-  children: JSX.Element;
+  children?: React.ReactNode;
 }
 
 const WrapperStyle = styled.div`
