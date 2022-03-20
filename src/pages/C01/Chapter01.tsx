@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 export const Chapter01: React.VFC = () => {
-  const Parts = [null, null, true, true, true, true];
+  const Parts = [null, null, true, true, true, true, true];
 
   return (
     <>

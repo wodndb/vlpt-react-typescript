@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-const NumOfExamples = [[0, 0, 2, 5, 4], [0], [0], [0], [0], [0], [0], [0]];
+const NumOfExamples = [[0, 0, 2, 5, 4, 2, 4], [0], [0], [0], [0], [0], [0], [0]];
 
 const PartPage: React.VFC = () => {
   const params = useParams()
@@ -29,7 +29,7 @@ const Part: React.FC<PartProps> = ({ chapterId, partId }) => {
             .fill(0)
             .map((_, i) => {
               return (
-                <li>
+                <li key={i}>
                   <Link to={`/Chapters/${chapterId}/Parts/${partId}/Examples/${i + 1}`}>Example {i + 1}</Link>
                 </li>
               );
