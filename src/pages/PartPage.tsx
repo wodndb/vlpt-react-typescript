@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-const NumOfExamples = [[0, 0, 2, 5, 4, 2, 4], [0], [0], [0], [0], [0], [0], [0]];
+const NumOfExamples = [[0, 0, 2, 5, 4, 2, 4, 1, 1, 1, 1, 1], [0], [0], [0], [0], [0], [0], [0]];
 
 const PartPage: React.VFC = () => {
   const params = useParams()
