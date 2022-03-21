@@ -9,6 +9,9 @@ import C01P09Example from "./C01/P09/C01P09Example";
 import C01P10Example from "./C01/P10/C01P10Example";
 import C01P11Example from "./C01/P11/C01P11Example";
 import C01P12Example from "./C01/P12/C01P12Example";
+import C01P13Example from "./C01/P13/C01P13Example";
+import C01P14Example from "./C01/P14/C01P14Example";
+import C01P15Example from "./C01/P15/C01P15Example";
 
 const Example: React.VFC = () => {
   const params = useParams();
@@ -24,6 +27,9 @@ const Example: React.VFC = () => {
       {params.chapterId === "1" && params.partId === "10" && <C01P10Example />}
       {params.chapterId === "1" && params.partId === "11" && <C01P11Example />}
       {params.chapterId === "1" && params.partId === "12" && <C01P12Example />}
+      {params.chapterId === "1" && params.partId === "13" && <C01P13Example />}
+      {params.chapterId === "1" && params.partId === "14" && <C01P14Example />}
+      {params.chapterId === "1" && params.partId === "15" && <C01P15Example />}
     </>
   );
 };
