@@ -8,7 +8,7 @@ export const Chapter01: React.VFC = () => {
       <div>
         <nav>
           <ul>
-            {Array(15)
+            {Array(19)
               .fill(0)
               .map((_, i): ReactElement => {
                 return (
