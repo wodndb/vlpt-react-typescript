@@ -41,7 +41,7 @@ const Example: React.VFC = () => {
       {params.chapterId === "1" && params.partId === "18" && <C01P18Example />}
       {params.chapterId === "1" && params.partId === "19" && <C01P19Example />}
       {params.chapterId === "1" && params.partId === "20" && <C01P20Example />}
-      {params.chapterId === "1" && params.partId === "20" && <C01P21Example />}
+      {params.chapterId === "1" && params.partId === "21" && <C01P21Example />}
     </>
   );
 };

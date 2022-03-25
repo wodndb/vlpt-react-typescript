@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useReducer, useRef } from "react";
 import CreateUser from "./components/CreateUser";
 import UserList, { UserType } from "./components/UserList";
-import useInputs from "./useInput";
+import useInputs2 from "./useInput2";
 
 const countActiveUsers = (users: UserType[]) => {
   console.log("활성 사용자 수를 세는 중");
@@ -91,8 +91,8 @@ interface IReducerAction {
   id?: number;
 }
 
-export const Example01: React.VFC = () => {
-  const [{ username, email }, onChange, reset] = useInputs<InputType>({
+export const Example02: React.VFC = () => {
+  const [{ username, email }, onChange, reset] = useInputs2({
     username: "",
     email: "",
   });
@@ -144,4 +144,4 @@ export const Example01: React.VFC = () => {
   );
 };
 
-export default Example01;
+export default Example02;
