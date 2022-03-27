@@ -18,6 +18,7 @@ import C01P18Example from "./C01/P18/C01P18Example";
 import C01P19Example from "./C01/P19/C01P19Example";
 import C01P20Example from "./C01/P20/C01P20Example";
 import C01P21Example from "./C01/P21/C01P21Exmaple";
+import C01P22Example from "./C01/P22/C01P22Example";
 
 const Example: React.VFC = () => {
   const params = useParams();
@@ -42,6 +43,7 @@ const Example: React.VFC = () => {
       {params.chapterId === "1" && params.partId === "19" && <C01P19Example />}
       {params.chapterId === "1" && params.partId === "20" && <C01P20Example />}
       {params.chapterId === "1" && params.partId === "21" && <C01P21Example />}
+      {params.chapterId === "1" && params.partId === "22" && <C01P22Example />}
     </>
   );
 };
