@@ -31,14 +31,18 @@ const initialTodos:TodoType[] = [
 
 interface ITodoReducerAction {
   type: string
-  id: number
-  todo: TodoType
+  id?: number
+  todo?: TodoType
 }
 
 const todoReducer = (state:TodoType[], action:ITodoReducerAction) => {
   switch (action.type) {
     case 'CREATE':
-      return state.concat(action.todo);
+      if(action.todo !== undefined)
+        return state.concat(action.todo);
+      else {
+        throw new Error(`todo is null`);
+      }
     case 'TOGGLE':
       return state.map(todo =>
         todo.id === action.id ? {...todo, done:!todo.done} : todo)

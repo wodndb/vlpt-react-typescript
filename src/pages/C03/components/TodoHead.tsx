@@ -26,15 +26,31 @@ const TodoHeadBlock = styled.div`
   }
 `
 
+const Day:React.VFC = () => {
+  const today = new Date();
+  const dateString = today.toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  const dayName = today.toLocaleDateString('ko-KR', {weekday:'long'});
+
+  return (
+    <>
+      <h1>{dateString}</h1>
+      <div className="day">{dayName}</div>
+    </>
+  )
+}
+
 const TodoHead:React.VFC = () => {
   const todos = useTodoState();
-  console.log(todos);
-  
+  const undoneTasks = todos.filter(todo => !todo.done);
+
   return (
     <TodoHeadBlock>
-      <h1>2019년 7월 10일</h1>
-      <div className="day">수요일</div>
-      <div className="task-left">할 일 2개 남음</div> 
+      <Day />
+      <div className="task-left">할 일 {undoneTasks.length}개 남음</div> 
     </TodoHeadBlock>
   )
 }

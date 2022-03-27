@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 import { MdDelete, MdDone } from "react-icons/md";
+import { useTodoDispatch } from "../TodoContext";
+import React from "react";
 
 const Remove = styled.div`
   display: flex;
@@ -12,7 +14,7 @@ const Remove = styled.div`
     color: #ff6b6b;
   }
   display: none;
-`
+`;
 
 const TodoItemBlock = styled.div`
   display: flex;
@@ -24,9 +26,9 @@ const TodoItemBlock = styled.div`
       display: initial;
     }
   }
-`
+`;
 
-const CheckCircle = styled.div<{done: boolean}>`
+const CheckCircle = styled.div<{ done: boolean }>`
   width: 32px;
   height: 32px;
   border-radius: 16px;
@@ -37,42 +39,45 @@ const CheckCircle = styled.div<{done: boolean}>`
   justify-content: center;
   margin-right: 20px;
   cursor: pointer;
-  ${props =>
+  ${(props) =>
     props.done &&
     css`
       border: 1px solid #38d9a9;
       color: #38d9a9;
-    `
-  }
+    `}
 `;
 
-const Text = styled.div<{done: boolean}>`
+const Text = styled.div<{ done: boolean }>`
   flex: 1;
   font-size: 21px;
   color: #495057;
-  ${props =>
-  props.done &&
-  css`
-    color: #ced4da;
-  `}
+  ${(props) =>
+    props.done &&
+    css`
+      color: #ced4da;
+    `}
 `;
 
 type TodoItemProps = {
-  id?: number,
-  done: boolean,
-  text: string
-}
+  id: number;
+  done: boolean;
+  text: string;
+};
 
-const TodoItem: React.FC<TodoItemProps> = ({id, done, text}) => {
+const TodoItem: React.FC<TodoItemProps> = ({ id, done, text }) => {
+  const dispatch = useTodoDispatch();
+  const onToggle = () => dispatch({ type: "TOGGLE", id });
+  const onRemove = () => dispatch({ type: "REMOVE", id });
+
   return (
     <TodoItemBlock>
-      <CheckCircle done={done}>{done && <MdDone />}</CheckCircle>
+      <CheckCircle done={done} onClick={onToggle} >{done && <MdDone />}</CheckCircle>
       <Text done={done}>{text}</Text>
-      <Remove>
+      <Remove onClick={onRemove}>
         <MdDelete />
       </Remove>
     </TodoItemBlock>
-  )
-}
+  );
+};
 
-export default TodoItem;
+export default React.memo(TodoItem);
