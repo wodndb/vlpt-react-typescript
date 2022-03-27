@@ -9,8 +9,7 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/Chapters" element={<Chapters />} />
+        <Route path="/" element={<Chapters />} />
         <Route path="/Chapters/:chapterId" element={<Chapter />} />
         <Route path="/Chapters/:chapterId/Parts/:partId" element={<PartPage />} />
         <Route path="/Chapters/:chapterId/Parts/:partId/Examples/:exampleId" element={<Example />} />
